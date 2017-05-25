@@ -167,8 +167,13 @@ import {Calendar} from './calendar';
       .datepicker__input {
         outline: none;
         border-radius: 3px;
-        padding: .2em .6em;
         font-size: 14px;
+        display: inline-block;
+        width: 96px;
+        border: none !important;
+        color: #4488FF;
+        padding: .2em .6em;
+        cursor: pointer;
       }
     `
     ],
@@ -404,7 +409,7 @@ export class DatepickerComponent implements OnInit, OnChanges {
 
     set enddate(val: Date) {
         this.endVal = val;
-        this.dateChange.emit(val);
+        //this.dateChange.emit(val);
     }
 
     // api bindings
@@ -544,7 +549,6 @@ export class DatepickerComponent implements OnInit, OnChanges {
     setCurrentMonth(monthNumber: number) {
         this.currentMonth = this.months[monthNumber];
         const calendarArray = this.calendar.monthDays(this.currentYear, this.currentMonthNumber);
-        console.log(calendarArray)
         this.calendarDays = [].concat.apply([], calendarArray);
     }
 
@@ -686,7 +690,7 @@ export class DatepickerComponent implements OnInit, OnChanges {
     }
 
     onSelectRightDay(day): void {
-        if(day == 0){
+        if (day == 0) {
             return
         }
         else {
@@ -719,27 +723,12 @@ export class DatepickerComponent implements OnInit, OnChanges {
         return color;
     }
 
-    versionForbbiddenDay(day) {
-        let today = new Date().getDate();
-        console.log(today)
-        console.log(this.rangeMonth)
-        console.log(this.rightDay)
-        console.log(this.leftDay)
-
-        if (this.rightDay != today) {
-            if (this.dateRight.getTime()) {
-
-            }
-        }
-
-    }
-
     isForbbiddenDay(day, rang) {
         let now = new Date()
         if (rang == 'left') {
             let today = new Date().getTime();
             if (day && day !== 0) {
-                if (day.getTime() > today|| day.getTime()> this.dateRight.getTime() || day.getTime() < (today - this.rangeMonth*30*86400000)) {
+                if (day.getTime() > today || day.getTime() > this.dateRight.getTime() || day.getTime() < (today - this.rangeMonth * 30 * 86400000)) {
                     return true
                 }
             }
@@ -765,7 +754,7 @@ export class DatepickerComponent implements OnInit, OnChanges {
         if (this.isChosenDay(day, rang)) {
             color = this.colors['white'];
         }
-        if(this.isForbbiddenDay(day,rang)){
+        if (this.isForbbiddenDay(day, rang)) {
             color = this.colors['grey']
         }
         return color;

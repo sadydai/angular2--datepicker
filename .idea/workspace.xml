@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c2976165-f311-4770-9181-3f123c7e7a43" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/datepicker.component.ts" afterPath="$PROJECT_DIR$/src/datepicker.component.ts" />
-    </list>
+    <list default="true" id="c2976165-f311-4770-9181-3f123c7e7a43" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -36,8 +34,8 @@
       <file leaf-file-name="datepicker.component.ts" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/datepicker.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="257">
-              <caret line="780" column="24" lean-forward="true" selection-start-line="780" selection-start-column="24" selection-end-line="780" selection-end-column="24" />
+            <state relative-caret-position="274">
+              <caret line="781" column="9" lean-forward="true" selection-start-line="781" selection-start-column="9" selection-end-line="781" selection-end-column="9" />
               <folding>
                 <element signature="e#293#1010#0" expanded="false" />
                 <element signature="e#1024#4649#0" expanded="false" />
@@ -145,12 +143,12 @@
       <option name="presentableId" value="Default" />
       <updated>1495100335042</updated>
       <workItem from="1495100337102" duration="53000" />
-      <workItem from="1495683741646" duration="16000" />
+      <workItem from="1495683741646" duration="69000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="69000" />
+    <option name="totallyTimeSpent" value="122000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -229,8 +227,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/datepicker.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
-          <caret line="780" column="24" lean-forward="true" selection-start-line="780" selection-start-column="24" selection-end-line="780" selection-end-column="24" />
+        <state relative-caret-position="274">
+          <caret line="781" column="9" lean-forward="true" selection-start-line="781" selection-start-column="9" selection-end-line="781" selection-end-column="9" />
           <folding>
             <element signature="e#293#1010#0" expanded="false" />
             <element signature="e#1024#4649#0" expanded="false" />
