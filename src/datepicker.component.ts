@@ -464,7 +464,7 @@ export class DatepickerComponent implements OnInit, OnChanges {
         this.altInputStyle = false;
         // time
         this.calendar = new Calendar();
-        this.dayNames = ['周六', '周一', '周二', '周三', '周四', '周五', '周日'];
+        this.dayNames = ['六', '一', '二', '三', '四', '五', '日'];
         this.months = [
             '1月', '2月', '3月', '4月', '5月', '6月', '7月',
             '8月', '9月', '10月', '11月', '12月'
@@ -737,9 +737,9 @@ export class DatepickerComponent implements OnInit, OnChanges {
     isForbbiddenDay(day, rang) {
         let now = new Date()
         if (rang == 'left') {
-            let today = new Date().getDate();
+            let today = new Date().getTime();
             if (day && day !== 0) {
-                if (day.getTime() > now.getTime()|| day.getTime()> this.dateRight.getTime()) {
+                if (day.getTime() > today|| day.getTime()> this.dateRight.getTime() || day.getTime() < (today - this.rangeMonth*30*86400000)) {
                     return true
                 }
             }
