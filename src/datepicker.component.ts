@@ -385,7 +385,8 @@ export class DatepickerComponent implements OnInit, OnChanges {
     @Output() dateChange = new EventEmitter<Date>();
     @Output() dateRightChange = new EventEmitter<Date>();
 
-    @Input() get date(): Date {
+    @Input()
+    get date(): Date {
         return this.dateVal;
     };
 
@@ -394,14 +395,19 @@ export class DatepickerComponent implements OnInit, OnChanges {
         this.dateChange.emit(val);
     }
 
-    @Input() get dateRight(): Date {
+    @Input()
+    set dateRight(val: Date) {
+        if(this.dateRightVal!=val){
+            this.dateRightVal = val;
+            this.dateRightChange.emit(val)
+        }
+    }
+
+    get dateRight(): Date {
         return this.dateRightVal
     }
 
-    set dateRight(val: Date) {
-        this.dateRightVal = val;
-        this.dateRightChange.emit(val)
-    }
+
 
     @Input() get enddate(): Date {
         return this.endVal;
@@ -484,7 +490,7 @@ export class DatepickerComponent implements OnInit, OnChanges {
     }
 
     ngOnChanges(changes: {[propertyName: string]: SimpleChange}) {
-        if ((changes['date'] || changes['dateFormat'])) {
+        if ((changes['date'] || changes['dateRight'])) {
             this.setDate();
             this.setRightDate()
             this.rightDay = this.dateRight.getDate() || new Date().getDate()
@@ -507,7 +513,7 @@ export class DatepickerComponent implements OnInit, OnChanges {
         this.setRightDate()
     }
 
-    private setCurrentValues(date: Date, rang: String) {
+    private setCurrentValues(date: Date, rang: string) {
         if (rang == 'start') {
             this.currentMonthNumber = date.getMonth();
             this.currentMonth = this.months[this.currentMonthNumber];
