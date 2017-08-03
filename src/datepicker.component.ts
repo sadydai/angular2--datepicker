@@ -734,7 +734,7 @@ export class DatepickerComponent implements OnInit, OnChanges {
         if (rang == 'left') {
             let today = new Date().getTime();
             if (day && day !== 0) {
-                if (day.getTime() > today || day.getTime() > this.dateRight.getTime() || day.getTime() < (today - this.rangeMonth * 30 * 86400000)) {
+                if (day.getTime() > today || day.getTime() > this.dateRight.getTime() || day.getTime() < (today - this.rangeMonth * 86400000)) {
                     return true
                 }
             }
