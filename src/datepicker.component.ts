@@ -186,7 +186,7 @@ import {Calendar} from './calendar';
         [disabled]="disabled"
         class="datepicker__input"
         [placeholder]="placeholder"
-        [ngStyle]="{'color': altInputStyle ? colors['white'] : colors['black'],
+        [ngStyle]="{'color': altInputStyle ? colors['white'] : colors['blue'],
                     'background-color': altInputStyle ? accentColor : colors['white'],
                     'border': altInputStyle ? '' : '1px solid #dadada'}"
         (click)="onInputLeftClick()"
@@ -213,7 +213,7 @@ import {Calendar} from './calendar';
         [disabled]="disabled"
         class="datepicker__input"
         [placeholder]="placeholder"
-        [ngStyle]="{'color': altInputStyle ? colors['white'] : colors['black'],
+        [ngStyle]="{'color': altInputStyle ? colors['white'] : colors['blue'],
                     'background-color': altInputStyle ? accentColor : colors['white'],
                     'border': altInputStyle ? '' : '1px solid #dadada'}"
         (click)="onInputRightClick()"
