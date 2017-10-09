@@ -194,7 +194,7 @@ import {Calendar} from './calendar';
         readonly="true"
         [ngClass]="{'active-input': showCalendarLeft}"
       >
-      <span> 
+      <span *ngIf="!isSingle"> 
         <svg width="13px" height="11px" viewBox="2516 -1920 13 11" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
             <desc>Created with Sketch.</desc>
             <defs></defs>
@@ -220,6 +220,7 @@ import {Calendar} from './calendar';
         [(ngModel)]="inputTexts"
         readonly="true"
         [ngClass]="{'active-input': showCalendarRight}"
+        *ngIf="!isSingle"
       >
       <div
         class="datepicker__calendar is_left"
@@ -299,7 +300,7 @@ import {Calendar} from './calendar';
       <!--右侧-->
       <div
         class="datepicker__calendar is_right"
-        *ngIf="showCalendarRight"
+        *ngIf="showCalendarRight && !isSingle"
       >
         <div class="datepicker__calendar__nav">
           <div
@@ -435,6 +436,7 @@ export class DatepickerComponent implements OnInit, OnChanges {
     @Input() showCalendarLeft: boolean;
     @Input() showCalendarRight: boolean;
     @Input() rangeMonth: number
+    @Input()isSingle :boolean
 
     // events
     @Output() onSelect = new EventEmitter<Date>();
@@ -734,7 +736,7 @@ export class DatepickerComponent implements OnInit, OnChanges {
         if (rang == 'left') {
             let today = new Date().getTime();
             if (day && day !== 0) {
-                if (day.getTime() > today || day.getTime() > this.dateRight.getTime() || day.getTime() < (today - this.rangeMonth * 86400000)) {
+                if (day.getTime() > today || day.getTime() > this.dateRight.getTime() || day.getTime() < (today - this.rangeMonth  * 86400000)) {
                     return true
                 }
             }
