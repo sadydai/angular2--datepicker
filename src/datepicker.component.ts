@@ -733,6 +733,9 @@ export class DatepickerComponent implements OnInit, OnChanges {
 
     isForbbiddenDay(day, rang) {
         let now = new Date()
+        if (day === 0) {
+            return true;
+        }
         if (rang == 'left') {
             let today = new Date().getTime();
             if (day && day !== 0) {
